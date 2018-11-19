@@ -8,3 +8,6 @@ execute_process(COMMAND awk -f iso_639.awk iso_639.tab
 file(WRITE langidents.c "${langidents.c}")
 
 add_executable(epgrab crc32.c lookup.c dvb_info_tables.c dvb_text_iconv.c langidents.c tv_grab_dvb.c)
+
+install(TARGETS epgrab
+        RUNTIME DESTINATION bin)
